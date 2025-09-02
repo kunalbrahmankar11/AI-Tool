@@ -25,7 +25,9 @@ function App() {
     });
 
     response = await response.json();
-    let dataString = response.candidates[0].content.parts[0].text;
+    // let dataString = response.candidates[0].content.parts[0].text;
+    let dataString = response?.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
+
     dataString = dataString.split("* ");
     dataString = dataString.map((item) => item.trim());
 

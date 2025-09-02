@@ -18,8 +18,11 @@ function App() {
   const askQuestion = async () => {
     let response = await fetch(URL, {
       method: "post",
-      body: JSON.stringify(payload)
-    })
+      headers: {
+        "Content-Type": "application/json",   // ✅ you’re missing this
+      },
+      body: JSON.stringify(payload),
+    });
 
     response = await response.json();
     let dataString = response.candidates[0].content.parts[0].text;
@@ -34,7 +37,7 @@ function App() {
   return (
     <div className='grid grid-cols-5 h-screen text-center'>
       <div className='col-span-1 bg-zinc-800'>
-        
+
       </div>
 
       <div className='col-span-4 p-10'>

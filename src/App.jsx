@@ -61,7 +61,7 @@ function App() {
 
         {/* Input Box */}
         <div className="bg-zinc-900 w-full sm:w-3/4 lg:w-1/2 p-1 pr-2 text-white m-auto rounded-3xl
-        border border-zinc-700 flex h-14 sm:h-16 mb-6 shadow-lg">
+        border border-zinc-700 flex h-14 sm:h-16 mb-24 shadow-lg ">
           <input
             type="text"
             value={question}

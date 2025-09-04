@@ -35,9 +35,10 @@ function App() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-5 h-screen text-center">
+    <div className="grid grid-cols-1 lg:grid-cols-5 h-screen text-center bg-gradient-to-br from-purple-900 via-blue-900 to-black">
       {/* Sidebar (hidden on mobile) */}
-      <div className="hidden lg:block col-span-1 bg-zinc-800">
+      <div className="hidden lg:block col-span-1 bg-gradient-to-b from-indigo-800 to-purple-800 shadow-xl">
+        <h2 className="text-white text-xl font-bold p-6">AI Tool</h2>
       </div>
 
       {/* Main Content */}
@@ -47,7 +48,10 @@ function App() {
           <div className="text-white">
             <ul>
               {result && result.map((item, idx) => (
-                <li key={idx} className="text-left p-1">
+                <li 
+                  key={idx} 
+                  className="text-left p-2 mb-2 bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 rounded-lg shadow-md hover:scale-105 transition-transform duration-200"
+                >
                   <Answer ans={item} />
                 </li>
               ))}
@@ -56,8 +60,8 @@ function App() {
         </div>
 
         {/* Input Box */}
-        <div className="bg-zinc-800 w-full sm:w-3/4 lg:w-1/2 p-1 pr-2 text-white m-auto rounded-3xl
-        border border-zinc-700 flex h-14 sm:h-16 mb-17">
+        <div className="bg-zinc-900 w-full sm:w-3/4 lg:w-1/2 p-1 pr-2 text-white m-auto rounded-3xl
+        border border-zinc-700 flex h-14 sm:h-16 mb-6 shadow-lg">
           <input
             type="text"
             value={question}
@@ -67,14 +71,17 @@ function App() {
                 askQuestion();
               }
             }}
-            className="w-full h-full p-3 outline-none bg-transparent text-sm sm:text-base"
-            placeholder="Ask me anything..."
+            className="w-full h-full p-3 outline-none bg-transparent text-sm sm:text-base placeholder-gray-400"
+            placeholder="✨ Ask me anything..."
           />
+          
           <button
             onClick={askQuestion}
-            className="px-3 sm:px-5 bg-blue-600 hover:bg-blue-700 rounded-2xl ml-2"
+            className="px-4 sm:px-6 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 
+            hover:from-indigo-600 hover:via-purple-600 hover:to-pink-500 
+            rounded-2xl ml-2 font-semibold shadow-md transition-all duration-300"
           >
-            Ask
+            Ask 🚀
           </button>
         </div>
       </div>
